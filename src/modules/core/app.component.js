@@ -5,7 +5,7 @@ import Dashboard from "../platform/user/components/dashboard.component";
 import PublicRoute from "./public-route";
 import PrivateRoute from "./private-route";
 import Layout from "./components/layout.component";
-import Registration from "./common/registration.component";
+import Registration from "./common/components/registration.component";
 import ForgotPassword from "./common/forgot-password.component";
 
 import { AdminClientRoutes, Login } from "../platform/user";

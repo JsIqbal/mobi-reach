@@ -96,7 +96,7 @@ function Login() {
                                             </div>
                                             <div className='form-group login-form-input'>
                                                 <label 
-                                                    htmlFor='email' 
+                                                    htmlFor='username' 
                                                     className='form-label'
                                                 >
                                                     Username
@@ -104,14 +104,14 @@ function Login() {
                                                 </label>
 
                                                 <Field 
-                                                    type="email" 
+                                                    type="username" 
                                                     className="form-control" 
-                                                    id="email" 
-                                                    name="email" 
+                                                    id="username" 
+                                                    name="username" 
                                                 />
 
                                                 <div className='invalid-feedback d-block'>
-                                                    <ErrorMessage name="email" />
+                                                    <ErrorMessage name="username" />
                                                 </div>
                                             </div>
 
