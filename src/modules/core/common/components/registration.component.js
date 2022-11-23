@@ -1,7 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Link, useNavigate } from 'react-router-dom';
 
-import { login } from "../../../platform/user/admin.actions";
+import { registration } from "../../../platform/user/admin.actions";
 import { registarSchema } from '../register.schema';
 
 function Registration() {
@@ -21,17 +21,17 @@ function Registration() {
                             nic:"",
                             brc:'',
                             vat: '',
-                            confirmPassword:'',
                             userName:'',
                             contactNumber: '',
                             companyAddress:'',
-                            checked:''
+                            checked:[]
                         }}
                         validationSchema={registarSchema}
                         onSubmit={(values, actions) => {
-                            login(values)
+                            console.log("values>> ", values)
+                            registration(values)
                                 .then(response => {
-                                   
+                                   console.log(response.data);
                                 })
                             actions.setSubmitting(false);
                         }}
@@ -250,7 +250,7 @@ function Registration() {
                                                     </label>
 
                                                     <Field 
-                                                        type="text" 
+                                                        type="number" 
                                                         className="form-control" 
                                                         id="nic" 
                                                         name="nic" 
@@ -269,7 +269,7 @@ function Registration() {
                                                     </label>
 
                                                     <Field 
-                                                        type="text" 
+                                                        type="number" 
                                                         className="form-control" 
                                                         id="vat" 
                                                         name="vat" 
@@ -356,7 +356,7 @@ function Registration() {
                                                                 </div>
                                                                 <div className='col-lg-6 me-auto'>
                                                                     <Link 
-                                                                        to='/registration'
+                                                                        to='/'
                                                                         className='login-form-btn btn registration'
                                                                     >
                                                                         CLOSE
