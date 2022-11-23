@@ -2,13 +2,13 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Table } from 'react-bootstrap';
 
-import { addUser } from '../../features/user-reducer';
+import { addUser } from '../../redux/reducers/user/user-reducer';
 import UserChart from '../../features/components/chart.component';
 
 function UserTable() {
     const dispatch = useDispatch();
-    const userList = useSelector((state) => state.users.value);
-    
+    const userList = useSelector((state) => state.userSlice.value);
+    console.log(userList)
     const [name, setName] = useState('');
     const [position, setPosition] = useState('');
     const [salary, setSalary] = useState('');
@@ -67,7 +67,7 @@ function UserTable() {
                     })}
                 </tbody>
             </Table>
-          <UserChart />
+          {/* <UserChart /> */}
         </>
     );
 }
