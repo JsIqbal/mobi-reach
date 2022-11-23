@@ -13,37 +13,22 @@ function Login() {
                 <div className='row'>
                     <Formik
                         initialValues={{
-                            email: "",
+                            username: "",
                             password: ""
                         }}
                         validationSchema={loginSchema}
                         onSubmit={(values, actions) => {
                             const fakeData = {
                                 admin : {
-                                    email: "admin@gmail.com",
+                                    username: "admin",
                                     password: "admin"
-                                },
-                                moderator: {
-                                    email: "moderator@gmail.com",
-                                    password: "moderator"
-                                },
-                                parent: {
-                                    email: "parent@gmail.com",
-                                    password: "parent"
-                                },
-                                child: {
-                                    email: "child@gmail.com",
-                                    password: "child"
-                                },
+                                }
                             }
                             login(values)
                                 .then(response => {
                                     const adminToken = response.admin;
-                                    const moderatorToken = response.moderator;
-                                    const parentToken = response.parent;
-                                    const childToken = response.child;
-
-                                    if (values.email===fakeData.admin.email && values.password===fakeData.admin.password) {
+                                   
+                                    if (values.username===fakeData.admin.username && values.password===fakeData.admin.password) {
                                         localStorage.setItem("access_token", adminToken);
 
                                         navigate("/admin/dashboard", { 
@@ -51,31 +36,7 @@ function Login() {
                                         });
                                     }
 
-                                    if (values.email===fakeData.moderator.email && values.password===fakeData.moderator.password) {
-                                        localStorage.setItem("access_token", moderatorToken);
-
-                                        navigate("/moderator/dashboard", { 
-                                            state: { someData: moderatorToken } 
-                                        });
-                                    }
-
-                                    if (values.email===fakeData.parent.email && values.password===fakeData.parent.password) {
-                                        localStorage.setItem("access_token", parentToken);
-
-                                        navigate("/parent/dashboard", { 
-                                            state: { someData: parentToken } 
-                                        });
-                                    }
-
-                                    if (values.email===fakeData.child.email && values.password===fakeData.child.password) {
-                                        localStorage.setItem("access_token", childToken);
-
-                                        navigate("/child/dashboard", { 
-                                            state: { someData: childToken } 
-                                        });
-                                    }
-
-                                    if (values.email!==fakeData.child.email && values.email!==fakeData.parent.email && values.email!==fakeData.admin.email && values.email!==fakeData.moderator.email) {
+                                    if (values.username!==fakeData.admin.username && values.password!==fakeData.admin.password) {
                                         alert("Error 404: user not found!")
 
                                         navigate("/");
@@ -104,7 +65,7 @@ function Login() {
                                                 </label>
 
                                                 <Field 
-                                                    type="username" 
+                                                    type="text" 
                                                     className="form-control" 
                                                     id="username" 
                                                     name="username" 
