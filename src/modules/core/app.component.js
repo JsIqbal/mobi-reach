@@ -28,7 +28,7 @@ function App() {
                 />
 
                 <Route 
-                    path="/admin/dashboard" 
+                    path="/dashboard" 
                     element={
                         <PrivateRoute>
                             <Layout>
@@ -38,7 +38,7 @@ function App() {
                     }
                 />
                 <Route 
-                    path="/admin/dashboard/*" 
+                    path="/dashboard/*" 
                     element={<AdminClientRoutes />} 
                 />
             </Routes>

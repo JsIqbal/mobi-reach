@@ -31,7 +31,7 @@ function Login() {
                                     if (values.username===fakeData.admin.username && values.password===fakeData.admin.password) {
                                         localStorage.setItem("access_token", adminToken);
 
-                                        navigate("/admin/dashboard", { 
+                                        navigate("/dashboard", { 
                                             state: { someData: adminToken } 
                                         });
                                     }
