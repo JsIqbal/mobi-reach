@@ -19,14 +19,14 @@ import {
 import { areaChartData, paiData_1, paiData_2, data } from '../../features/chart-data';
 
 function UserChart() {
-    const userList = useSelector((state) => state.users.value);
+    // const userList = useSelector((state) => state.UserSlice.value);
 
     return (
         <>
           <div className='row' style={{width:"100%"}}>
           <ResponsiveContainer width='50%' aspect={3}>
 
-                <BarChart data={userList} width={300} height={400}>
+                <BarChart  width={300} height={400}>
                     <XAxis dataKey='position' />
                     <YAxis />
                     <Tooltip />
