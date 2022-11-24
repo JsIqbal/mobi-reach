@@ -1,7 +1,10 @@
 import React from "react";
 import { Routes, Route, Navigate  } from 'react-router-dom';
 
-import Dashboard from "../platform/user/components/dashboard.component";
+import "../../style/dashboard.scss";
+
+// import Dashboard from "../platform/user/components/dashboard.component";
+import Dashboard from "./components/common.dashboard.component";
 import PublicRoute from "./public-route";
 import PrivateRoute from "./private-route";
 import Layout from "./components/layout.component";
@@ -39,9 +42,9 @@ function App() {
                     path="/dashboard" 
                     element={
                         <PrivateRoute>
-                            <Layout>
+                           
                                 <Dashboard />
-                            </Layout>
+                       
                         </PrivateRoute>
                     }
                 />

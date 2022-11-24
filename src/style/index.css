@@ -6,6 +6,7 @@
     background-position: inherit;
     background-attachment: fixed;
     height: 100vh;
+    /* background: linear-gradient(180deg, #980d9b 0%, rgba(190, 65, 88, 0.7) 50%); */
 }
 
 .recharts-text {
