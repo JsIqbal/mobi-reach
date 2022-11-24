@@ -6,9 +6,9 @@ import PublicRoute from "./public-route";
 import PrivateRoute from "./private-route";
 import Layout from "./components/layout.component";
 import Registration from "./common/components/registration.component";
-import ForgotPassword from "./common/forgot-password.component";
 
 import { AdminClientRoutes, Login } from "../platform/user";
+import ForgotPassword from "./common/components/forgot-password.component";
 
 function App() {
     return (
@@ -23,6 +23,14 @@ function App() {
                     element={
                         <PublicRoute>
                             <Login />
+                        </PublicRoute>
+                    }
+                />
+                <Route 
+                    path="/reset-password"
+                    element={
+                        <PublicRoute>
+                            <ForgotPassword />
                         </PublicRoute>
                     }
                 />

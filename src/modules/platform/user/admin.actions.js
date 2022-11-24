@@ -25,3 +25,13 @@ export async function registration(data) {
         return alert("status 201: user added successfully");
     }
 }
+
+export async function forgotPassword(data) {
+    try {
+        const response = await axios.post("http://registration", data);
+        console.log(response);
+        return response;
+    } catch (err) {
+        return alert("status 201: user added successfully");
+    }
+}

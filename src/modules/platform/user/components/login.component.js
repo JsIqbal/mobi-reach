@@ -18,6 +18,7 @@ function Login() {
                         }}
                         validationSchema={loginSchema}
                         onSubmit={(values, actions) => {
+                            console.log("Login values>>", values)
                             const fakeData = {
                                 admin : {
                                     username: "admin",
@@ -130,14 +131,14 @@ function Login() {
                                                                 </div>
                                                                 <div className='col-lg-12 text-center mb-2'>
                                                                     <Link className='login-link'
-                                                                        to='/reset-password'
+                                                                        to='/contact'
                                                                     >
                                                                         Contact us
                                                                     </Link>
                                                                 </div>
                                                                 <div className='col-lg-12 text-center'>
                                                                     <Link className='login-link'
-                                                                        to='/reset-password'
+                                                                        to='/terms'
                                                                     >
                                                                         Terms & Conditions
                                                                     </Link>
